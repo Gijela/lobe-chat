@@ -1,9 +1,9 @@
 import { Avatar, ChatHeaderTitle, Logo, Markdown } from '@lobehub/ui';
+import { Typography } from 'antd';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import pkg from '@/../package.json';
 import ModelTag from '@/components/ModelTag';
 import ChatList from '@/features/Conversation/components/ChatList';
 import { useSessionStore } from '@/store/session';
@@ -58,8 +58,13 @@ const Preview = memo<FieldType & { title?: string }>(
             <ChatList />
             {withFooter ? (
               <Flexbox align={'center'} className={styles.footer} gap={4}>
-                <Logo extra={'chat'} type={'combine'} />
-                <div className={styles.url}>{pkg.homepage}</div>
+                <div style={{ alignItems: 'center', display: 'flex' }}>
+                  <Logo size={32} />
+                  <Typography.Title level={3} style={{ marginBottom: 0, marginLeft: 4 }}>
+                    Chat2Hub
+                  </Typography.Title>
+                </div>
+                <div className={styles.url}>{'https://chat2hub.com'}</div>
               </Flexbox>
             ) : (
               <div />

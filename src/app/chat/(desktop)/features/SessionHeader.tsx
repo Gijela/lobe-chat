@@ -1,4 +1,5 @@
-import { ActionIcon, Logo } from '@lobehub/ui';
+import { ActionIcon } from '@lobehub/ui';
+import { Typography } from 'antd';
 import { createStyles } from 'antd-style';
 import { MessageSquarePlus } from 'lucide-react';
 import { memo } from 'react';
@@ -28,7 +29,13 @@ const Header = memo(() => {
   return (
     <Flexbox className={styles.top} gap={16} padding={16}>
       <Flexbox distribution={'space-between'} horizontal>
-        <Logo className={styles.logo} size={36} type={'text'} />
+        <Typography.Title
+          className={styles.logo}
+          level={3}
+          style={{ marginBottom: 0, marginTop: 4 }}
+        >
+          Chat2Hub
+        </Typography.Title>
         <ActionIcon
           icon={MessageSquarePlus}
           onClick={() => createSession()}

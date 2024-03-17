@@ -1,23 +1,23 @@
 import { Icon } from '@lobehub/ui';
 import { Button, Divider, Tag } from 'antd';
 import { Github, Settings, Share2 } from 'lucide-react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { AGENTS_INDEX_GITHUB, imageUrl } from '@/const/url';
+import { AGENTS_INDEX_GITHUB } from '@/const/url';
 
 const Inner = memo(() => {
   const { t } = useTranslation('market');
   return (
     <>
-      <Image
+      {/* <Image
         alt={'banner'}
         height={602}
         src={imageUrl('banner_market_modal.webp')}
         style={{ height: 'auto', marginBottom: 24, width: '100%' }}
         width={1602}
-      />
+      /> */}
       <h3>
         <Tag color={'cyan'}>{t('guide.func1.tag')}</Tag>
         <span>{t('guide.func1.title')}</span>

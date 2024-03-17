@@ -6,7 +6,7 @@ import { FC, memo } from 'react';
 import ResponsiveContainer from '@/components/ResponsiveContainer';
 import MobileSwitchLoading from '@/features/MobileSwitchLoading';
 
-import Footer from './features/Footer';
+// import Footer from './features/Footer';
 import Showcase from './features/Showcase';
 import Layout from './layout.desktop';
 
@@ -19,7 +19,7 @@ export default memo(() => (
   <ResponsiveContainer Mobile={Mobile}>
     <Layout>
       <Showcase />
-      <Footer />
+      {/* <Footer /> */}
     </Layout>
   </ResponsiveContainer>
 ));

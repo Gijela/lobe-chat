@@ -1,4 +1,5 @@
 import { ActionIcon, Avatar, Logo, MobileNavBar } from '@lobehub/ui';
+import { Typography } from 'antd';
 import { createStyles } from 'antd-style';
 import { MessageSquarePlus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -25,7 +26,11 @@ const Header = memo(() => {
   const avatar = useGlobalStore(commonSelectors.userAvatar);
   return (
     <MobileNavBar
-      center={<Logo type={'text'} />}
+      center={
+        <Typography.Title level={4} style={{ marginBottom: 0 }}>
+          Chat2Hub
+        </Typography.Title>
+      }
       left={
         <div onClick={() => router.push('/settings')} style={{ marginLeft: 8 }}>
           {avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}
