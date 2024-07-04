@@ -1,11 +1,10 @@
-import { ActionIcon, DiscordIcon, Icon } from '@lobehub/ui';
+import { ActionIcon, Icon } from '@lobehub/ui';
 import { Badge } from 'antd';
 import { ItemType } from 'antd/es/menu/interface';
 import {
-  Book,
-  CircleUserRound,
-  Download,
-  Feather,
+  // Book,
+  CircleUserRound, // Download,
+  // Feather,
   HardDriveDownload,
   HardDriveUpload,
   LifeBuoy,
@@ -21,7 +20,7 @@ import { Flexbox } from 'react-layout-kit';
 import urlJoin from 'url-join';
 
 import type { MenuProps } from '@/components/Menu';
-import { DISCORD, DOCUMENTS, EMAIL_SUPPORT, GITHUB_ISSUES, mailTo } from '@/const/url';
+import { EMAIL_SUPPORT, mailTo } from '@/const/url';
 import { isServerMode } from '@/const/version';
 import DataImporter from '@/features/DataImporter';
 import { useOpenSettings } from '@/hooks/useInterceptingRoutes';
@@ -58,7 +57,7 @@ const NewVersionBadge = memo(
 
 export const useMenu = () => {
   const router = useQueryRoute();
-  const { canInstall, install } = usePWAInstall();
+  const { canInstall } = usePWAInstall();
   const hasNewVersion = useNewVersion();
   const openSettings = useOpenSettings();
   const { t } = useTranslation(['common', 'setting', 'auth']);
@@ -106,12 +105,12 @@ export const useMenu = () => {
   /* ↑ cloud slot ↑ */
 
   const pwa: MenuProps['items'] = [
-    {
-      icon: <Icon icon={Download} />,
-      key: 'pwa',
-      label: t('installPWA'),
-      onClick: () => install(),
-    },
+    // {
+    //   icon: <Icon icon={Download} />,
+    //   key: 'pwa',
+    //   label: t('installPWA'),
+    //   onClick: () => install(),
+    // },
     {
       type: 'divider',
     },
@@ -163,35 +162,35 @@ export const useMenu = () => {
       ].filter(Boolean) as ItemType[]);
 
   const helps: MenuProps['items'] = [
-    {
-      icon: <Icon icon={DiscordIcon} />,
-      key: 'discord',
-      label: (
-        <Link href={DISCORD} target={'_blank'}>
-          {t('userPanel.discord')}
-        </Link>
-      ),
-    },
+    // {
+    //   icon: <Icon icon={DiscordIcon} />,
+    //   key: 'discord',
+    //   label: (
+    //     <Link href={DISCORD} target={'_blank'}>
+    //       {t('userPanel.discord')}
+    //     </Link>
+    //   ),
+    // },
     {
       children: [
-        {
-          icon: <Icon icon={Book} />,
-          key: 'docs',
-          label: (
-            <Link href={DOCUMENTS} target={'_blank'}>
-              {t('userPanel.docs')}
-            </Link>
-          ),
-        },
-        {
-          icon: <Icon icon={Feather} />,
-          key: 'feedback',
-          label: (
-            <Link href={GITHUB_ISSUES} target={'_blank'}>
-              {t('userPanel.feedback')}
-            </Link>
-          ),
-        },
+        // {
+        //   icon: <Icon icon={Book} />,
+        //   key: 'docs',
+        //   label: (
+        //     <Link href={DOCUMENTS} target={'_blank'}>
+        //       {t('userPanel.docs')}
+        //     </Link>
+        //   ),
+        // },
+        // {
+        //   icon: <Icon icon={Feather} />,
+        //   key: 'feedback',
+        //   label: (
+        //     <Link href={GITHUB_ISSUES} target={'_blank'}>
+        //       {t('userPanel.feedback')}
+        //     </Link>
+        //   ),
+        // },
         {
           icon: <Icon icon={Mail} />,
           key: 'email',

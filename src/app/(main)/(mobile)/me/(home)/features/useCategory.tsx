@@ -1,11 +1,11 @@
-import { DiscordIcon } from '@lobehub/ui';
-import { Book, CircleUserRound, Database, Download, Feather, Settings2 } from 'lucide-react';
+// import { DiscordIcon } from '@lobehub/ui';
+import { CircleUserRound, Database, Download, Settings2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
 import { CellProps } from '@/components/Cell';
 import { enableAuth } from '@/const/auth';
-import { DISCORD, DOCUMENTS, FEEDBACK } from '@/const/url';
+// import { DISCORD, DOCUMENTS, FEEDBACK } from '@/const/url';
 import { isServerMode } from '@/const/version';
 import { usePWAInstall } from '@/hooks/usePWAInstall';
 import { useUserStore } from '@/store/user';
@@ -58,9 +58,9 @@ export const useCategory = () => {
 
   const settingsWithoutAuth = [
     ...useSettingsCategory(),
-    {
-      type: 'divider',
-    },
+    // {
+    //   type: 'divider',
+    // },
   ];
 
   /* ↓ cloud slot ↓ */
@@ -80,24 +80,24 @@ export const useCategory = () => {
   ];
 
   const helps: CellProps[] = [
-    {
-      icon: Book,
-      key: 'docs',
-      label: t('document'),
-      onClick: () => window.open(DOCUMENTS, '__blank'),
-    },
-    {
-      icon: Feather,
-      key: 'feedback',
-      label: t('feedback'),
-      onClick: () => window.open(FEEDBACK, '__blank'),
-    },
-    {
-      icon: DiscordIcon,
-      key: 'discord',
-      label: 'Discord',
-      onClick: () => window.open(DISCORD, '__blank'),
-    },
+    // {
+    //   icon: Book,
+    //   key: 'docs',
+    //   label: t('document'),
+    //   onClick: () => window.open(DOCUMENTS, '__blank'),
+    // },
+    // {
+    //   icon: Feather,
+    //   key: 'feedback',
+    //   label: t('feedback'),
+    //   onClick: () => window.open(FEEDBACK, '__blank'),
+    // },
+    // {
+    //   icon: DiscordIcon,
+    //   key: 'discord',
+    //   label: 'Discord',
+    //   onClick: () => window.open(DISCORD, '__blank'),
+    // },
   ];
 
   const mainItems = [
